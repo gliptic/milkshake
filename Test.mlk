@@ -1,0 +1,40 @@
+module Test(main)
+
+import Prelude
+
+class Assignable(a, b) {
+	set(a, b) Unit
+	get(a) b
+}
+
+Maybe(a) {
+	None()
+	Just(a)
+}
+
+Box(a)#(a)
+
+Pair#(Maybe, Maybe)
+
+fib(x Double) Double {
+	let r = if x < 2.0 {
+			1.0
+		} else {
+			fib(x - 2.0) + fib(x - 1.0)
+		}
+	r
+}
+
+main() Maybe(Double) {
+	let n = Just(fib(10.0))
+	let p = Pair(n, n)
+	let Pair(x, y) = id(p)
+
+	let b = Box(n)
+
+	case x {
+		Just(z) {
+			Just(z)
+		}
+	}
+}

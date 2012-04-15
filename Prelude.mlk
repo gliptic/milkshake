@@ -1,0 +1,13 @@
+module Prelude(Int, Bool, Unit, Double)
+
+Int = Int32_
+Bool = Bool_
+Unit = Unit_
+Double = Double_
+
+List(a) {
+	Empty()
+	Cons(a, List(a))
+}
+
+id(x a) a { x }
